@@ -4,13 +4,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+//RecyclerView Adapter for inflating single custom layout to a list of items
+class CustomAdapter (private val listItems: ArrayList<Int>) : RecyclerView.Adapter<CustomAdapter.ViewHolder>() {
 
-class CustomAdapter2 (private val listItems: ArrayList<Int>) : RecyclerView.Adapter<CustomAdapter2.ViewHolder>() {
 
-    /**
-     * Provide a reference to the type of views that you are using
-     * (custom ViewHolder).
-     */
     inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val circleView: CircleView=view.findViewById(R.id.circle_view)
     }

@@ -6,29 +6,26 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 
+// A Custom View Class that can be use as a ui element
 class CircleView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
+    //radius of the drawn circle
     private var radius = 50f
-    private val TAG = "CircleView"
-    var rect : Rect
-    var paint:Paint
+    //create an object from Paint class for setting color of circle
+    var paint: Paint
+    //initialize paint object with default color
     init {
         paint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
             color = Color.RED
         }
-        rect = Rect()
     }
-    private val centre = PointF(150f, 150f)
+    //draws shape to ui screen
     override fun onDraw(canvas: Canvas) {
         canvas.drawCircle((width / 2).toFloat(), (height / 2).toFloat(), radius, paint)
     }
-
-    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        setMeasuredDimension(widthMeasureSpec, heightMeasureSpec);
-    }
-    public fun setViewColor(colorResource: Int){
-        //paint.color=Color.GREEN
-        paint.color=colorResource
+    //changes shape color using a resource color id
+    public fun setViewColor(colorResource: Int) {
+        paint.color = colorResource
     }
 }
