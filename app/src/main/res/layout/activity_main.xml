@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--enables DataBinding to this layout-->
+<?xml version="1.0" encoding="utf-8"?><!--enables DataBinding to this layout-->
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!--creates a variable referencing to MainViewModel class-->
     <data>
+
         <variable
             name="mainViewModel"
             type="dan.nr.customviews.MainViewModel" />
@@ -14,7 +13,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <!--a layout for randomly added circle views.
         circle views in this layout can be dragged and dropped-->
@@ -31,21 +29,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!--circle views with this parent can be shown as a horizontal or vertical list. -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/activity_main_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/circle_item" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
@@ -53,59 +36,56 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.8" />
 
-
-        <!--this button adds a single circle view to recycler views list or relativelayout-->
-
-
-        <!--makes a horizontal list of added circles in ui-->
-
+        <!--this button adds a single circle view to activity_main_RelativeLayout-->
         <Button
             android:id="@+id/activity_main_btnAddView"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:onClick="@{()->mainViewModel.increaseCustomViewNumbers()}"
-            android:text="add view"
+            android:text="@string/add_view"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/activity_main_btnAlignHorizontally"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/activity_main_btnAlignHorizontally"
             app:layout_constraintTop_toBottomOf="@+id/activity_main_btnAlignHorizontally" />
 
+        <!--makes a horizontal list of added circles in ui-->
         <Button
             android:id="@+id/activity_main_btnAlignHorizontally"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Align Horizontally"
+            android:text="@string/align_horizontally"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@+id/activity_main_btnAddView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/activity_main_btnAlignVertically"
             app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
-
         <!--makes a vertical list of added circles in ui-->
-
-
-        <!--clears all circle views from RelativeLayout an RecyclerView's list-->
         <Button
             android:id="@+id/activity_main_btnAlignVertically"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Align \n Vertically"
+            android:text="@string/align_vertically"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toTopOf="@+id/activity_main_btnClearScreen"
             app:layout_constraintEnd_toStartOf="@+id/activity_main_btnAlignHorizontally"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guideline" />
 
+        <!--clears all circle views from RelativeLayout-->
         <Button
             android:id="@+id/activity_main_btnClearScreen"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:onClick="@{()->mainViewModel.clearScreen()}"
-            android:text="Clear Screen"
+            android:text="@string/clear_screen"
+            android:textAllCaps="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/activity_main_btnAlignVertically"
             app:layout_constraintHorizontal_bias="0.5"

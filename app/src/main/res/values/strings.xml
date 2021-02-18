@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CustomViews</string>
-    <string name="fan_off">off</string>
-    <string name="fan_low">1</string>
-    <string name="fan_medium">2</string>
-    <string name="fan_high">3</string>
+    <string name="align_horizontally">Align Horizontally</string>
+    <string name="add_view">Add view</string>
+    <string name="clear_screen">Clear Screen</string>
+    <string name="align_vertically">Align \n Vertically</string>
 </resources>

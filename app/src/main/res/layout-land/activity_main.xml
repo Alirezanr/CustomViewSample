@@ -31,21 +31,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-        <!--circle views with this parent can be shown as a horizontal or vertical list. -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/activity_main_recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toTopOf="@+id/guideline"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:listitem="@layout/circle_item" />
-
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"
             android:layout_width="wrap_content"
@@ -55,9 +40,7 @@
 
 
         <!--this button adds a single circle view to recycler views list or relativelayout-->
-
-
-        <!--makes a horizontal list of added circles in ui-->
+        <!--makes a horizontal line of added circles in ui-->
 
         <Button
             android:id="@+id/activity_main_btnAddView"
